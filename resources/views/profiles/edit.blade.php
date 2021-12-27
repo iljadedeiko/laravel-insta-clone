@@ -20,7 +20,7 @@
                            type="text"
                            class="form-control @error('title') is-invalid @enderror"
                            name="title"
-                           value="{{ old('title') }}"
+                           value="{{ old('title') ?? $user->profile->title }}"
                            autocomplete="title" autofocus>
 
                     @error('title')
@@ -37,7 +37,7 @@
                            type="text"
                            class="form-control @error('description') is-invalid @enderror"
                            name="description"
-                           value="{{ old('description') }}"
+                           value="{{ old('description') ?? $user->profile->description }}"
                            autocomplete="description" autofocus>
 
                     @error('description')
@@ -54,7 +54,7 @@
                            type="text"
                            class="form-control @error('url') is-invalid @enderror"
                            name="url"
-                           value="{{ old('url') }}"
+                           value="{{ old('url') ?? $user->profile->url }}"
                            autocomplete="url" autofocus>
 
                     @error('url')
